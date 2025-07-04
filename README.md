@@ -7,7 +7,7 @@ The official PHP SDK for the Huefy email sending platform. Send template-based e
 Install the SDK using Composer:
 
 ```bash
-composer require teracrafts/huefy
+composer require teracrafts/huefy-sdk-php
 ```
 
 ## Quick Start

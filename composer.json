@@ -1,5 +1,5 @@
 {
-    "name": "teracrafts/huefy",
+    "name": "teracrafts/huefy-sdk-php",
     "description": "Official PHP SDK for Huefy - App Mail Templates with dynamic email sending",
     "type": "library",
     "keywords": ["huefy", "email", "api", "sdk", "template", "transactional"],
