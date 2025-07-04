@@ -54,7 +54,7 @@ try {
     echo "=== Client with Custom Configuration ===\n";
     
     $config = new HuefyConfig(
-        baseUrl: 'https://api.huefy.com',
+        baseUrl: 'https://api.huefy.dev',
         timeout: 45.0,
         connectTimeout: 15.0,
         retryConfig: new RetryConfig(

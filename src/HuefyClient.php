@@ -54,7 +54,7 @@ use Psr\Log\NullLogger;
 class HuefyClient
 {
     private const USER_AGENT = 'Huefy-PHP-SDK/1.0.0';
-    private const DEFAULT_BASE_URL = 'https://api.huefy.com';
+    private const DEFAULT_BASE_URL = 'https://api.huefy.dev';
 
     private GuzzleClient $httpClient;
     private HuefyConfig $config;

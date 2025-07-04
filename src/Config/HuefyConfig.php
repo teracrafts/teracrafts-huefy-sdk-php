@@ -18,7 +18,7 @@ use InvalidArgumentException;
  * use Huefy\SDK\Config\RetryConfig;
  *
  * $config = new HuefyConfig(
- *     baseUrl: 'https://api.huefy.com',
+ *     baseUrl: 'https://api.huefy.dev',
  *     timeout: 30.0,
  *     connectTimeout: 10.0,
  *     retryConfig: new RetryConfig(
@@ -37,10 +37,12 @@ use InvalidArgumentException;
  */
 class HuefyConfig
 {
-    private const DEFAULT_BASE_URL = 'https://api.huefy.com';
+    private const DEFAULT_PROXY_URL = 'http://localhost:8080/huefy-proxy';
+    private const DEFAULT_BASE_URL = 'https://api.huefy.dev';
     private const DEFAULT_TIMEOUT = 30.0;
     private const DEFAULT_CONNECT_TIMEOUT = 10.0;
 
+    private ?string $proxyUrl;
     private string $baseUrl;
     private float $timeout;
     private float $connectTimeout;
@@ -57,15 +59,27 @@ class HuefyConfig
      * @throws InvalidArgumentException If any parameter is invalid
      */
     public function __construct(
+        ?string $proxyUrl = self::DEFAULT_PROXY_URL,
         string $baseUrl = self::DEFAULT_BASE_URL,
         float $timeout = self::DEFAULT_TIMEOUT,
         float $connectTimeout = self::DEFAULT_CONNECT_TIMEOUT,
         ?RetryConfig $retryConfig = null
     ) {
+        $this->proxyUrl = $proxyUrl;
         $this->setBaseUrl($baseUrl);
         $this->setTimeout($timeout);
         $this->setConnectTimeout($connectTimeout);
         $this->retryConfig = $retryConfig ?? new RetryConfig();
+    }
+
+    /**
+     * Get the proxy URL for optimized routing.
+     *
+     * @return string|null
+     */
+    public function getProxyUrl(): ?string
+    {
+        return $this->proxyUrl;
     }
 
     /**

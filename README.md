@@ -71,7 +71,6 @@ use Huefy\SDK\HuefyClient;
 use Huefy\SDK\Config\HuefyConfig;
 
 $config = new HuefyConfig(
-    baseUrl: 'https://api.huefy.com',
     timeout: 30.0,
     connectTimeout: 10.0
 );
